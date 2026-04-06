@@ -74,7 +74,7 @@
     "_times": [
       0,
       0.30000001192092896,
-      0.46666666865348816,
+      0.4833333194255829,
       0.6000000238418579,
       1
     ],
@@ -111,14 +111,14 @@
         "__type__": "cc.RealKeyframeValue",
         "interpolationMode": 0,
         "tangentWeightMode": 0,
-        "value": 0.8999999761581421,
+        "value": 0.800000011920929,
         "rightTangent": 0,
         "rightTangentWeight": 1,
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
         "__editorExtras__": {
-          "broken": null
+          "tangentMode": 0
         }
       },
       {
@@ -145,7 +145,9 @@
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
-        "__editorExtras__": null
+        "__editorExtras__": {
+          "broken": null
+        }
       }
     ],
     "preExtrapolation": 1,
@@ -162,7 +164,7 @@
     "_times": [
       0,
       0.30000001192092896,
-      0.46666666865348816,
+      0.4833333194255829,
       0.6000000238418579,
       1
     ],
@@ -199,14 +201,14 @@
         "__type__": "cc.RealKeyframeValue",
         "interpolationMode": 0,
         "tangentWeightMode": 0,
-        "value": 0.8999999761581421,
+        "value": 0.800000011920929,
         "rightTangent": 0,
         "rightTangentWeight": 1,
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
         "__editorExtras__": {
-          "broken": null
+          "tangentMode": 0
         }
       },
       {
@@ -233,7 +235,9 @@
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
-        "__editorExtras__": null
+        "__editorExtras__": {
+          "broken": null
+        }
       }
     ],
     "preExtrapolation": 1,
@@ -250,7 +254,7 @@
     "_times": [
       0,
       0.30000001192092896,
-      0.46666666865348816
+      0.4833333194255829
     ],
     "_values": [
       {
@@ -292,7 +296,7 @@
         "leftTangentWeight": 1,
         "easingMethod": 0,
         "__editorExtras__": {
-          "broken": null
+          "tangentMode": 0
         }
       }
     ],
@@ -461,13 +465,15 @@
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
-        "__editorExtras__": null
+        "__editorExtras__": {
+          "broken": null
+        }
       },
       {
         "__type__": "cc.RealKeyframeValue",
         "interpolationMode": 0,
         "tangentWeightMode": 0,
-        "value": 0.10907799750566483,
+        "value": 0.2698846757411957,
         "rightTangent": 0,
         "rightTangentWeight": 1,
         "leftTangent": 0,
@@ -479,7 +485,7 @@
         "__type__": "cc.RealKeyframeValue",
         "interpolationMode": 0,
         "tangentWeightMode": 0,
-        "value": 0.10907799750566483,
+        "value": 0.2698846757411957,
         "rightTangent": 0,
         "rightTangentWeight": 1,
         "leftTangent": 0,
@@ -497,7 +503,9 @@
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
-        "__editorExtras__": null
+        "__editorExtras__": {
+          "broken": null
+        }
       }
     ],
     "preExtrapolation": 1,
@@ -528,13 +536,15 @@
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
-        "__editorExtras__": null
+        "__editorExtras__": {
+          "broken": null
+        }
       },
       {
         "__type__": "cc.RealKeyframeValue",
         "interpolationMode": 0,
         "tangentWeightMode": 0,
-        "value": 0.866349995136261,
+        "value": 0.8501957058906555,
         "rightTangent": 0,
         "rightTangentWeight": 1,
         "leftTangent": 0,
@@ -546,7 +556,7 @@
         "__type__": "cc.RealKeyframeValue",
         "interpolationMode": 0,
         "tangentWeightMode": 0,
-        "value": 0.866349995136261,
+        "value": 0.8501957058906555,
         "rightTangent": 0,
         "rightTangentWeight": 1,
         "leftTangent": 0,
@@ -564,7 +574,9 @@
         "leftTangent": 0,
         "leftTangentWeight": 1,
         "easingMethod": 0,
-        "__editorExtras__": null
+        "__editorExtras__": {
+          "broken": null
+        }
       }
     ],
     "preExtrapolation": 1,

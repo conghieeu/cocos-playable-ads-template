@@ -122,13 +122,13 @@
             "_value": true
           },
           "video": {
-            "_value": false
+            "_value": true
           },
           "webview": {
-            "_value": true
+            "_value": false
           },
           "tween": {
-            "_value": true
+            "_value": false
           },
           "websocket": {
             "_value": false
@@ -205,9 +205,8 @@
           "mask",
           "procedural-animation",
           "sorting-2d",
-          "tween",
           "ui",
-          "webview"
+          "video"
         ],
         "noDeprecatedFeatures": {
           "value": false,

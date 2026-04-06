@@ -12,18 +12,18 @@ export class NodeActions extends Component {
         this.node.active = true;
     }
 
+    /**
+    * Tắt node này
+    */
+    public deactive(): void {
+        log("Deactivating node %s", this.node.name);
+        this.node.active = false;
+    }
+
     // xóa node
     public destroyNode(): void {
         log("Destroying node %s", this.node.name);
         this.node.destroy();
-    }
-
-    /**
-     * Tắt node này
-     */
-    public deactive(): void {
-        log("Deactivating node %s", this.node.name);
-        this.node.active = false;
     }
 
     /**
