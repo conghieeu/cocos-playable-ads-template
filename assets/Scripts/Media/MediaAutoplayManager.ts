@@ -46,45 +46,49 @@ export class MediaAutoplayManager extends Component {
         // Khởi tạo arrays để tránh null
         this.managedVideos = this.managedVideos || [];
         this.managedAudios = this.managedAudios || [];
-        
+
         // Reset arrays
         this.managedVideos.length = 0;
         this.managedAudios.length = 0;
-        
+
         const videoPlayers: VideoPlayer[] = [];
         const audioSources: AudioSource[] = [];
-        
+
         // Kiểm tra scene tồn tại
         if (!this.node || !this.node.scene) {
             console.warn('Scene not available for media collection');
             return;
         }
-        
+
         // Duyệt toàn bộ cây node
         const traverse = (node: Node) => {
             if (!node || !node.isValid) return;
-            
-            const video = node.getComponent(VideoPlayer);
-            if (video) videoPlayers.push(video);
-            
-            const audio = node.getComponent(AudioSource);
-            if (audio) audioSources.push(audio);
-            
+
+            if (typeof VideoPlayer !== 'undefined' && VideoPlayer) {
+                const video = node.getComponent(VideoPlayer);
+                if (video) videoPlayers.push(video);
+            }
+
+            if (typeof AudioSource !== 'undefined' && AudioSource) {
+                const audio = node.getComponent(AudioSource);
+                if (audio) audioSources.push(audio);
+            }
+
             node.children.forEach(child => traverse(child));
         };
-        
+
         traverse(this.node.scene);
-        
+
         this.managedVideos = videoPlayers;
         this.managedAudios = audioSources;
-        
+
         console.log(`Collected ${videoPlayers.length} videos, ${audioSources.length} audios.`);
     }
 
     setupGlobalTouchListener() {
         // Cách 1: Lắng nghe trên tất cả button trong scene
         this.registerButtonListeners();
-        
+
         // Cách 2: Backup - lắng nghe touch event toàn cục cho trường hợp touch không phải button
         input.once(Input.EventType.TOUCH_START, this.handleFirstTouch, this);
         console.log('Global touch and button listeners registered');
@@ -92,7 +96,7 @@ export class MediaAutoplayManager extends Component {
 
     registerButtonListeners() {
         let allButtons: Button[] = [];
-        
+
         // Ưu tiên sử dụng danh sách button được assign manually
         if (this.priorityButtons.length > 0) {
             allButtons = this.priorityButtons;
@@ -100,24 +104,26 @@ export class MediaAutoplayManager extends Component {
         } else {
             // Fallback: Tự động tìm tất cả button trong scene
             const traverse = (node: Node) => {
-                const button = node.getComponent(Button);
-                if (button) {
-                    allButtons.push(button);
+                if (typeof Button !== 'undefined' && Button) {
+                    const button = node.getComponent(Button);
+                    if (button) {
+                        allButtons.push(button);
+                    }
                 }
                 node.children.forEach(child => traverse(child));
             };
-            
+
             traverse(this.node.scene);
             console.log(`Auto-found ${allButtons.length} buttons in scene`);
         }
-        
+
         // Đăng ký listener cho tất cả button
         allButtons.forEach(button => {
             if (button && button.node) {
                 button.node.once(Node.EventType.TOUCH_START, this.handleFirstTouch, this);
             }
         });
-        
+
         console.log(`Registered touch listeners on ${allButtons.length} buttons`);
     }
 
@@ -127,21 +133,21 @@ export class MediaAutoplayManager extends Component {
             console.log('First touch already handled, ignoring...');
             return;
         }
-        
+
         this.hasTriggeredFirstTouch = true;
         console.log('First touch detected! Unmuting and playing all media.');
-        
+
         // Phát sự kiện ngay lần đầu click
         EventHandler.emitEvents(this.firstClickHandlers);
         console.log('First click event handlers triggered');
-        
+
         // Kiểm tra và thu thập lại media nếu cần
-        if (!this.managedVideos || !this.managedAudios || 
+        if (!this.managedVideos || !this.managedAudios ||
             this.managedVideos.length === 0 && this.managedAudios.length === 0) {
             console.log('Media arrays are null or empty, re-collecting...');
             this.collectAllMedia();
         }
-        
+
         // Bước 3.1: Bật lại tiếng cho tất cả video với null check
         if (this.managedVideos && this.managedVideos.length > 0) {
             this.managedVideos.forEach(video => {
@@ -151,7 +157,7 @@ export class MediaAutoplayManager extends Component {
             });
             console.log(`Unmuted ${this.managedVideos.length} videos`);
         }
-        
+
         // Bước 3.2: Bật (play) tất cả các nguồn âm thanh với null check
         if (this.managedAudios && this.managedAudios.length > 0) {
             this.managedAudios.forEach(audio => {

@@ -6,7 +6,7 @@ const { ccclass, property } = _decorator;
 export class PlayableAdManager extends Component {
 
     onLoad() {
-        super_html_playable.set_google_play_url("https://play.google.com/store/apps/details?id=com.emulator.gbaemulator2025");
+        super_html_playable.set_google_play_url("https://play.google.com/store/apps/details?id=com.lutech.arsketch");
         super_html_playable.set_app_store_url("");
     }
 
