@@ -1,0 +1,13 @@
+{
+  "ver": "2.0.4",
+  "importer": "animation-clip",
+  "imported": true,
+  "uuid": "fefedd35-73e1-44eb-ba30-fb4cc68fc6c9",
+  "files": [
+    ".bin"
+  ],
+  "subMetas": {},
+  "userData": {
+    "name": "TweenArrayUpDown"
+  }
+}
